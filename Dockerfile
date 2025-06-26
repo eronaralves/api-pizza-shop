@@ -1,0 +1,17 @@
+# Use a imagem oficial do Bun
+FROM oven/bun:1.1
+
+# Diretório de trabalho dentro do container
+WORKDIR /app
+
+# Copia os arquivos do projeto para dentro do container
+COPY . .
+
+# Instala as dependências
+RUN bun install
+
+# Expõe a porta que sua aplicação utiliza (ex: 3000)
+EXPOSE 3000
+
+# Comando para rodar sua aplicação
+CMD ["bun", "run", "start"]
